@@ -22,7 +22,9 @@ class StudentsController < ApplicationController
 
   def index
     # @students = Student.all
-    @students = Students.search(params[:query])
+    @students = Student.search(params[:query])
+    #search method in student model to pass this:
+    # Add in search functionality such that users can type in a student name or fragment of a student name and and see all matching results on the students index page.
   end
 
   # def search
