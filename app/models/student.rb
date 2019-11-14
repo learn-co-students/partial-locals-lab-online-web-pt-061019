@@ -15,6 +15,9 @@ class Student < ActiveRecord::Base
   has_many :classrooms, through: :classroom_students
 
   def self.search(query)
+    # Student.where("name LIKE ?", "%M%")
+# it should actually be something like the above but can't figure it out.
+
     matched_students = []
     if query == ""
       Student.all
