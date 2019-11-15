@@ -21,7 +21,24 @@ class StudentsController < ApplicationController
   end
 
   def index
-    @students = Student.all
+
+    @students = Student.search(params[:query])
+    render 'index'
+
+    # @students = Student.all
+    # raise params
+    # {"query"=>"Shannon"}
+    # @students = Student.where("name LIKE (?)", "%#{params["query"]}%")
+
+    # User.where("first_name LIKE (?)", "%#{first_name}%")
+
+
+    # ActiveRecord that follows the form:
+    # Student.where("name LIKE ?", "%M%").
+    # You should be able to visually test this by visiting
+    # http://localhost:3000?query="search_text".
+    # Doing so will mean that you will have a query
+    # parameter whose data can be fit into a LIKE query.
   end
 
   def student_params
