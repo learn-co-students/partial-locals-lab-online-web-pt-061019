@@ -19,7 +19,6 @@ class Student < ActiveRecord::Base
       where("name LIKE ?", "%#{query}%")
     else
       self.all
-  
     end
   end
 
