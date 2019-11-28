@@ -1,0 +1,11 @@
+<%= render @students, search: @students do |f| %>
+    <p>
+        <%= f.text_field :query, params[:seach] %>
+        <%= f.submit 'Search' %>
+    </p> 
+<% end %>
+
+<% @students.each do |student| %>
+    <%= render partial: 'student', locals: {student: student} %>    
+<% end %>
+        

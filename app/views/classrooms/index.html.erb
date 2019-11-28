@@ -1,0 +1,5 @@
+ <%= render "students/student", search: 'student' do |f| %>
+    <p>
+      Class contains: <%= f.text_field :course_name %>
+    </p>
+  <% end %>
